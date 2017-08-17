@@ -96,5 +96,6 @@ execute "sudo rmmod nvidia"
 echo 'Trying to load nouveau module'
 execute "sudo modprobe nouveau"
 # --------- DISPLAY GPU STATUS ----------
-echo 'GPU Status'
+sleep 5 # Wait for GPU to power down
+echo 'GPU Status:'
 execute "sudo cat /sys/kernel/debug/vgaswitcheroo/switch"
