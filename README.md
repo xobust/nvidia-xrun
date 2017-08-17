@@ -2,6 +2,11 @@
 These utility scripts aim to make the life easier for nvidia cards users.
 It started with a revelation that bumblebee in current state offers very poor performance. This solution offers a bit more complicated procedure but offers a full GPU utilization(in terms of linux drivers)
 
+## The problem with Thinkpad t440p
+The later versions of the t440p bios have a bug that makes turning off the dGPU with bbswitch impossible.
+Luckily another power management technology has been implemented in the nouveau driver.
+This fork of Nvidia xrun loads the nouveau driver on exit which powers down the GPU. 
+
 ## Usage: 
   1. switch to free tty
   1. login
