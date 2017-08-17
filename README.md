@@ -26,13 +26,13 @@ Currently sudo is required as the script needs to wake up GPU, modprobe the nvid
  
 
 ## Setting the right bus id
-Usually the 1:0:0 bus is correct. If this is not your case(you can find out through lspci or bbswitch output mesages) you can create
+I found that the bus is 2:0:0 was correct on my 440p. If this is not your case(you can find out through lspci or bbswitch output mesages) you can create
 a conf script for example `nano /etc/X11/nvidia-xorg.conf.d/30-nvidia.conf` to set the proper bus id:
 
     Section "Device"
         Identifier "nvidia"
         Driver "nvidia"
-        BusID "PCI:2:0:0"
+        BusID "PCI:1:0:0"
     EndSection
     
 Also this way you can adjust some nvidia settings if you encounter issues:
@@ -53,10 +53,6 @@ With this you do not need to specify the app and you can simply run:
 
     nvidia-xrun
     
-## Aur package
-The aur package can be found here: https://aur.archlinux.org/packages/nvidia-xrun/
-
-
 ## Troubleshooting
 ### Steam issues
 Yes unfortunately running Steam directly with nvidia-xrun does not work well - I recommend to use some window manager like openbox.
