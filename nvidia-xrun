@@ -86,6 +86,9 @@ execute $COMMAND
 echo 'Unloading nvidia_drm module'
 execute "sudo rmmod -f nvidia_drm"
 
+echo 'Unloading nvidia_uvm module'
+execute "sudo rmmod nvidia_uvm"
+
 echo 'Unloading nvidia_modeset module'
 execute "sudo rmmod nvidia_modeset"
 
